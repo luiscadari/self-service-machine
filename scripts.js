@@ -81,6 +81,19 @@ const SelfServiceMachine = {
       });
       return total;
     },
+    showSummary: () => {
+      const selectedProducts = [];
+      this.products.forEach((product, index) => {
+        if (product.active) {
+          selectedProducts.push(product.name);
+        }
+      });
+      if (selectedProducts.length > 0) {
+        return true;
+      }
+
+      return false;
+    },
   },
 };
 
